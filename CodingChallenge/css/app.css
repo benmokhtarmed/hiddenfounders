@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700");
+@import url("normalize.min.css");
+@import url("font-awesome.min.css");
+body {
+  font-family: "Montserrat", sans-serif; }
+
+a {
+  text-decoration: none; }
+
+header {
+  overflow: hidden;
+  background: #273042; }
+  header #main-logo {
+    font-size: 30px;
+    margin: 22px 20px;
+    float: left; }
+    header #main-logo span:first-child {
+      color: #fff; }
+    header #main-logo span:last-child {
+      color: #E23943; }
+  header .explore-menu {
+    float: left;
+    margin: 32px 0 0 136px; }
+    header .explore-menu a, header .explore-menu i {
+      color: #fff; }
+    header .explore-menu i {
+      display: inline-block;
+      margin-left: 6px; }
+    header .explore-menu ul {
+      display: none; }
+    header .explore-menu li {
+      list-style: none; }
+      header .explore-menu li a {
+        color: #fff; }
+  header #user-area {
+    float: right;
+    margin: 22px 20px;
+    color: #fff; }
+    header #user-area span, header #user-area img {
+      display: inline-block;
+      margin: 0 5px;
+      vertical-align: middle; }
+
+main {
+  clear: both;
+  overflow: hidden; }
+  main #main-title {
+    overflow: hidden;
+    color: #fff;
+    background-image: url(../imgs/bg_main_title.png);
+    background-size: contain;
+    background-color: #273042;
+    position: relative; }
+    main #main-title img {
+      margin: 20px;
+      display: block;
+      float: left; }
+    main #main-title .title {
+      float: left;
+      margin: 0 20px; }
+      main #main-title .title h1 {
+        font-size: 50px;
+        font-weight: bold;
+        margin: 30px 0; }
+      main #main-title .title p {
+        font-size: 20px; }
+      main #main-title .title #followers-count {
+        font-size: 14px; }
+    main #main-title .setting {
+      position: absolute;
+      right: 20px;
+      bottom: 20px; }
+      main #main-title .setting a {
+        color: #fff;
+        font-size: 16px;
+        display: inline-block;
+        background: #E23943;
+        border-radius: 20px;
+        padding: 12px 24px; }
+      main #main-title .setting .icon-settings {
+        font-size: 16px;
+        color: #fff;
+        padding: 5px 7px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        display: inline-block; }
+  main nav {
+    background: #273042;
+    clear: both;
+    overflow: hidden; }
+    main nav > ul {
+      float: left;
+      position: relative; }
+    main nav > ul > li > ul {
+      display: none;
+      position: absolute; }
+    main nav > ul > li:hover ul {
+      display: block;
+      transition: 1s ease all; }
+    main nav li {
+      list-style: none; }
+    main nav a {
+      color: #fff; }
+    main nav ul.sort {
+      margin: 20px 0 0 170px; }
+      main nav ul.sort li {
+        float: left;
+        margin: 0 20px; }
+        main nav ul.sort li a {
+          padding: 10px; }
+        main nav ul.sort li a.current {
+          color: #E23943;
+          border-bottom: 2px solid #E23943; }
+  main #primary {
+    clear: both; }
+    main #primary .venues-listing {
+      width: 70%;
+      float: left; }
+      main #primary .venues-listing .venue {
+        float: left;
+        width: 30%;
+        margin: 1%; }
+        main #primary .venues-listing .venue img {
+          width: 100%; }
+    main #primary .map-listing {
+      width: 30%;
+      float: left; }
+      main #primary .map-listing img {
+        width: 100%; }
+
+footer {
+  clear: both;
+  overflow: hidden;
+  background: #273042; }
+  footer #main-logo {
+    font-size: 30px;
+    margin: 22px 20px; }
+    footer #main-logo span:first-child {
+      color: #fff; }
+    footer #main-logo span:last-child {
+      color: #E23943; }
+
+/*# sourceMappingURL=app.css.map */
