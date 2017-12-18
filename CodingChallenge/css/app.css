@@ -11,16 +11,13 @@ header {
   overflow: hidden;
   background: #273042; }
   header #main-logo {
-    font-size: 30px;
-    margin: 22px 20px;
-    float: left; }
+    font-size: 30px; }
     header #main-logo span:first-child {
       color: #fff; }
     header #main-logo span:last-child {
       color: #E23943; }
   header .explore-menu {
-    float: left;
-    margin: 32px 0 0 136px; }
+    float: left; }
     header .explore-menu a, header .explore-menu i {
       color: #fff; }
     header .explore-menu i {
@@ -34,7 +31,6 @@ header {
         color: #fff; }
   header #user-area {
     float: right;
-    margin: 22px 20px;
     color: #fff; }
     header #user-area span, header #user-area img {
       display: inline-block;
@@ -52,35 +48,22 @@ main {
     background-color: #273042;
     position: relative; }
     main #main-title img {
-      margin: 20px;
       display: block;
       float: left; }
     main #main-title .title {
-      float: left;
-      margin: 0 20px; }
+      float: left; }
       main #main-title .title h1 {
-        font-size: 50px;
-        font-weight: bold;
-        margin: 30px 0; }
-      main #main-title .title p {
-        font-size: 20px; }
-      main #main-title .title #followers-count {
-        font-size: 14px; }
+        font-weight: bold; }
     main #main-title .setting {
       position: absolute;
-      right: 20px;
-      bottom: 20px; }
+      right: 20px; }
       main #main-title .setting a {
         color: #fff;
-        font-size: 16px;
         display: inline-block;
         background: #E23943;
-        border-radius: 20px;
-        padding: 12px 24px; }
+        border-radius: 20px; }
       main #main-title .setting .icon-settings {
-        font-size: 16px;
         color: #fff;
-        padding: 5px 7px;
         border: 1px solid #fff;
         border-radius: 50%;
         display: inline-block; }
@@ -94,13 +77,11 @@ main {
     main nav > ul > li > ul {
       display: none;
       position: absolute; }
-    main nav > ul > li:hover ul {
-      display: block;
-      transition: 1s ease all; }
     main nav li {
       list-style: none; }
     main nav a {
-      color: #fff; }
+      color: #fff;
+      text-transform: uppercase; }
     main nav ul.sort {
       margin: 20px 0 0 170px; }
       main nav ul.sort li {
@@ -114,24 +95,49 @@ main {
   main #primary {
     clear: both; }
     main #primary .venues-listing {
-      width: 70%;
       float: left; }
       main #primary .venues-listing .venue {
         float: left;
-        width: 30%;
-        margin: 1%; }
+        position: relative; }
         main #primary .venues-listing .venue img {
           width: 100%; }
+        main #primary .venues-listing .venue .cycle-slideshow > span {
+          position: absolute;
+          top: 45%;
+          color: #fff;
+          z-index: 1200;
+          display: block;
+          cursor: pointer; }
+        main #primary .venues-listing .venue .cycle-next {
+          right: 5px; }
+        main #primary .venues-listing .venue .cycle-prev {
+          left: 5px; }
+        main #primary .venues-listing .venue .venue-name, main #primary .venues-listing .venue .likes-count {
+          display: block;
+          color: #252525;
+          clear: both;
+          margin: 5px 0; }
+        main #primary .venues-listing .venue .venue-name {
+          font-weight: bold;
+          font-size: 18px; }
+          main #primary .venues-listing .venue .venue-name i.fa {
+            color: #FFCC3A;
+            font-size: 14px;
+            margin: 3px; }
+        main #primary .venues-listing .venue .likes-count {
+          font-size: 14px; }
     main #primary .map-listing {
       width: 30%;
-      float: left; }
+      float: left;
+      margin: 10px 0; }
       main #primary .map-listing img {
         width: 100%; }
 
 footer {
   clear: both;
   overflow: hidden;
-  background: #273042; }
+  background: #273042;
+  margin: 25px 0 0 0; }
   footer #main-logo {
     font-size: 30px;
     margin: 22px 20px; }
@@ -139,5 +145,185 @@ footer {
       color: #fff; }
     footer #main-logo span:last-child {
       color: #E23943; }
+
+@media only screen and (max-width: 767px) {
+  #main-logo {
+    margin: 10px;
+    text-align: center; }
+
+  .explore-menu {
+    margin: 10px 0 0 20px;
+    clear: right; }
+
+  #user-area {
+    margin: 0 20px; }
+    #user-area img {
+      width: 36px; }
+
+  #main-title {
+    padding: 0 0 20px 0; }
+    #main-title img {
+      width: 20%;
+      margin: 10px 10px 0 20px; }
+    #main-title .title {
+      float: left;
+      width: 60%;
+      margin: 10px; }
+      #main-title .title h1 {
+        font-size: 24px;
+        margin: 8px 0; }
+      #main-title .title p {
+        display: none; }
+      #main-title .title #followers-count {
+        font-size: 11px; }
+    #main-title .setting {
+      bottom: 10px;
+      font-size: 10px; }
+      #main-title .setting a {
+        padding: 5px 12px;
+        margin: 0 5px; }
+      #main-title .setting .icon-settings {
+        padding: 3px 4px;
+        margin: 0; }
+
+  .filters-sort {
+    display: none; }
+
+  .filters-sort-mobile {
+    display: block; }
+    .filters-sort-mobile > div {
+      float: right;
+      margin: 20px 20px 0 0; }
+      .filters-sort-mobile > div > ul {
+        display: none; }
+
+  main nav ul.sort {
+    margin: 20px 0 0 0;
+    float: right; }
+
+  .map-listing {
+    display: none; }
+
+  .venues-listing {
+    width: 100%;
+    margin: 10px 0 0 10px; }
+    .venues-listing .venue {
+      width: 31%;
+      margin: 3px; } }
+@media only screen and (min-width: 768px) and (max-width: 1315px) {
+  #main-logo {
+    margin: 10px;
+    float: left; }
+
+  .explore-menu {
+    margin: 18px 0 0 120px;
+    float: left; }
+
+  #user-area {
+    margin: 10px 20px;
+    float: right; }
+    #user-area img {
+      width: 36px; }
+
+  .map-listing {
+    display: none; }
+
+  .venues-listing {
+    width: 100%; }
+
+  #main-title img {
+    width: 120px;
+    margin: 20px 10px 0 20px; }
+  #main-title .title {
+    float: left; }
+    #main-title .title h1 {
+      font-size: 36px; }
+  #main-title .setting {
+    bottom: 10px;
+    font-size: 12px; }
+    #main-title .setting a {
+      padding: 7px 15px;
+      margin: 0 5px; }
+    #main-title .setting .icon-settings {
+      padding: 7px 8px;
+      margin: 0; }
+
+  .filters-sort {
+    display: block; }
+
+  .filters-sort-mobile {
+    display: none; }
+
+  main nav ul.sort {
+    margin: 20px 0 0 0;
+    float: right; }
+
+  .venues-listing {
+    width: 65%;
+    margin: 10px; }
+    .venues-listing .venue {
+      width: 31%;
+      margin: 3px; }
+
+  .map-listing {
+    display: block; } }
+@media only screen and (min-width: 1316px) {
+  #main-logo {
+    margin: 10px;
+    float: left; }
+
+  .explore-menu {
+    margin: 18px 0 0 120px;
+    float: left; }
+
+  #user-area {
+    margin: 10px 20px;
+    float: right; }
+    #user-area img {
+      width: 36px; }
+
+  .map-listing {
+    display: none; }
+
+  .venues-listing {
+    width: 70%; }
+
+  #user-area {
+    margin: 22px 20px; }
+
+  #main-title img {
+    margin: 20px 10px 0 20px; }
+  #main-title h1 {
+    font-size: 50px; }
+  #main-title .setting {
+    bottom: 10px;
+    font-size: 12px; }
+    #main-title .setting a {
+      padding: 7px 15px;
+      margin: 0 5px; }
+    #main-title .setting .icon-settings {
+      padding: 7px 8px;
+      margin: 0; }
+
+  .filters-sort {
+    display: block; }
+
+  .filters-sort-mobile {
+    display: none; }
+
+  main nav ul.sort {
+    margin: 20px 0 0 170px;
+    float: left; }
+
+  .venues-listing {
+    width: 68%;
+    margin: 10px 0 0 20px; }
+    .venues-listing .venue {
+      width: 30%;
+      max-width: 310px;
+      margin: 3px; }
+
+  .map-listing {
+    display: block; } }
 
 /*# sourceMappingURL=app.css.map */

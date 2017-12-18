@@ -13,12 +13,10 @@ header{
     background: $background-main-color;
     #main-logo{
         font-size:30px;
-        margin: 22px 20px;
-        float: left;
         span:first-child{color: #fff}
         span:last-child{color: $background-second-color; }
     }
-    .explore-menu{float: left; margin: 32px 0 0 136px; 
+    .explore-menu{float: left;
         a, i{color: #fff;}
         i{display: inline-block; margin-left: 6px;}
         ul{display: none;}
@@ -28,7 +26,6 @@ header{
     }
     #user-area{
         float: right;
-        margin: 22px 20px;
         color: #fff;
         span, img{display: inline-block; margin:0 5px; vertical-align: middle;}
     }   
@@ -38,24 +35,21 @@ main{
     overflow: hidden;
     #main-title{
         overflow: hidden; color: #fff; background-image: url(../imgs/bg_main_title.png); background-size: contain; background-color: $background-main-color; position: relative;
-        img{margin: 20px; display: block; float: left;}
-        .title{float: left; margin: 0 20px;
-            h1{font-size: 50px; font-weight: bold; margin: 30px 0;}
-            p{font-size: 20px;}
-            #followers-count{font-size: 14px;}
+        img{ display: block; float: left;}
+        .title{float: left;
+            h1{font-weight: bold;}
         }
-        .setting{position: absolute; right: 20px; bottom: 20px;
-            a{color: #fff;  font-size: 16px; display: inline-block; background: $background-second-color; border-radius: 20px; padding: 12px 24px; }
-            .icon-settings{font-size: 16px; color: #fff; padding: 5px 7px; border: 1px solid #fff; border-radius: 50%; display: inline-block; }
+        .setting{position: absolute; right: 20px;
+            a{color: #fff; display: inline-block; background: $background-second-color; border-radius: 20px; }
+            .icon-settings{ color: #fff; border: 1px solid #fff; border-radius: 50%; display: inline-block; }
         }
     }
     nav{
         background: $background-main-color; clear: both; overflow: hidden;
         >ul{float: left; position: relative;}
         >ul>li>ul{display: none; position: absolute;}
-        >ul>li:hover ul{display: block; transition: 1s ease all;}
         li{list-style: none;}
-        a{color: #fff;}
+        a{color: #fff; text-transform: uppercase;}
         ul.filter{
             
         }
@@ -70,12 +64,20 @@ main{
     }
     #primary{
         clear: both;
-        .venues-listing{width: 70%; float: left;
-            .venue{float: left; width: 30%; margin: 1%;
+        .venues-listing{float: left; 
+            .venue{float: left; position: relative;
                 img{width: 100%}
+                .cycle-slideshow>span{position:absolute; top:45%; color: #fff; z-index: 1200; display:block; cursor: pointer;}
+                .cycle-next{ right:5px; }
+                .cycle-prev{ left:5px; }
+                .venue-name, .likes-count{display: block; color: #252525; clear: both; margin: 5px 0;}
+                .venue-name{font-weight: bold; font-size: 18px;
+                    i.fa{color: #FFCC3A; font-size: 14px; margin: 3px;}
+                }
+                .likes-count{font-size: 14px;}
             }
         }
-        .map-listing{width: 30%; float: left;
+        .map-listing{width: 30%; float: left; margin: 10px 0;
             img{width: 100%}
         }
     }
@@ -84,6 +86,7 @@ footer{
     clear: both;
     overflow: hidden;
     background: $background-main-color;
+    margin: 25px 0 0 0;
     #main-logo{
         font-size:30px;
         margin: 22px 20px;
@@ -91,3 +94,103 @@ footer{
         span:last-child{color: $background-second-color; }
     }
 }
+
+@media only screen and (max-width: 767px) {
+    #main-logo{margin: 10px; text-align: center;}
+    .explore-menu{margin: 10px 0 0 20px; clear: right; }
+    #user-area{margin: 0 20px;
+        img{width: 36px;}
+    }
+    #main-title{ 
+        padding: 0 0 20px 0;
+        img{width: 20%; margin: 10px 10px 0 20px;}
+        .title{
+            float: left; width: 60%; margin: 10px;
+            h1{font-size: 24px; margin: 8px 0;}
+            p{display: none;}
+            #followers-count{font-size: 11px;}
+        }
+        .setting{bottom: 10px; font-size: 10px;
+            a{padding: 5px 12px; margin: 0 5px; }
+            .icon-settings{padding: 3px 4px; margin: 0;}
+        }
+    }
+    .filters-sort{ display: none; }
+    .filters-sort-mobile{
+        display: block;
+        >div{ float: right; margin: 20px 20px 0 0;
+            >ul{display: none;}
+        }    
+    }
+    main nav ul.sort {
+        margin: 20px 0 0 0;
+        float: right;
+    }
+    .map-listing{display: none;}
+    .venues-listing{width: 100%; margin: 10px 0 0 10px;
+        .venue{width: 31%; margin: 3px;}
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1315px) {
+    #main-logo{margin: 10px; float: left;}
+    .explore-menu{margin: 18px 0 0 120px; float: left;}
+    #user-area{margin: 10px 20px; float: right;
+        img{width: 36px;}
+    }
+    .map-listing{display: none;}
+    .venues-listing{width: 100%;}
+    #main-title{ 
+        img{width: 120px; margin: 20px 10px 0 20px;}
+        .title{
+            float: left; 
+            h1{font-size: 36px;}
+        }
+        .setting{bottom: 10px; font-size: 12px;
+            a{padding: 7px 15px; margin: 0 5px; }
+            .icon-settings{padding: 7px 8px; margin: 0;}
+        }
+    }
+    .filters-sort{display: block;  }
+    .filters-sort-mobile{display: none; }
+    main nav ul.sort {
+        margin: 20px 0 0 0;
+        float: right;
+    }
+    .venues-listing{width: 65%; margin: 10px;
+        .venue{width: 31%;margin: 3px}
+    } 
+    .map-listing{display: block;}
+}
+
+@media only screen and (min-width: 1316px) {
+    #main-logo{margin: 10px; float: left;}
+    .explore-menu{margin: 18px 0 0 120px; float: left;}
+    #user-area{margin: 10px 20px; float: right;
+        img{width: 36px;}
+    }
+    .map-listing{display: none;}
+    .venues-listing{width: 70%;}
+   
+    #user-area{margin: 22px 20px;}
+    #main-title{ 
+        img{ margin: 20px 10px 0 20px;}
+        h1{font-size: 50px;}
+        .setting{bottom: 10px; font-size: 12px;
+            a{padding: 7px 15px; margin: 0 5px; }
+            .icon-settings{padding: 7px 8px; margin: 0;}
+        }
+    }
+    .filters-sort{display: block;  }
+    .filters-sort-mobile{display: none; }
+    main nav ul.sort {
+        margin: 20px 0 0 170px;
+        float: left;
+    }
+    .venues-listing{width: 68%; margin: 10px 0 0 20px;
+        .venue{width: 30%; max-width: 310px; margin: 3px;}
+    } 
+    .map-listing{display: block;}
+}
+
+
