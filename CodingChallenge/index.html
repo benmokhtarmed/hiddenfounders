@@ -41,15 +41,13 @@
                 </div>
             </section>
             <nav role="navigation" class="dropdown filters-sort">
-                <ul class="filter">
-                    <li>
-                        <a href="#">Popular <i class="fa fa-caret-down"></i></a>
-                        <ul>
-                            <li><a href="#">New</a></li>
-                            <li><a href="#">Editors Choice</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <div class="filter">
+                    <a href="#">Popular <i class="fa fa-caret-down"></i></a>
+                    <ul>
+                        <li><a href="#">New</a></li>
+                        <li><a href="#">Editors Choice</a></li>
+                    </ul>
+                </div>
                 <ul class="sort">
                     <li><a href="#" class="current">Affordable</a></li>
                     <li><a href="#">Fancy</a></li>
@@ -58,15 +56,13 @@
                 </ul>
             </nav>
             <nav role="navigation" class="dropdown filters-sort-mobile">
-                <ul class="filter">
-                    <li>
-                        <a href="#">Popular <i class="fa fa-caret-down"></i></a>
-                        <ul>
-                            <li><a href="#">New</a></li>
-                            <li><a href="#">Editors Choice</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <div class="filter">
+                    <a href="#">Popular <i class="fa fa-caret-down"></i></a>
+                    <ul>
+                        <li><a href="#">New</a></li>
+                        <li><a href="#">Editors Choice</a></li>
+                    </ul>
+                </div>
                 <div class="sort">
                     <a href="#">Menu <i class="fa fa-caret-down"></i></a>
                     <ul>
@@ -147,9 +143,7 @@
                         <span class="likes-count">300K likes</span>
                     </div>
                 </div>
-                <div class="map-listing">
-                    <img src="imgs/map.png" alt="Map"/>
-                </div>
+                <div class="map-listing"  id="map-canvas"></div>
             </div>
         </main>
         <footer>
@@ -157,5 +151,84 @@
         </footer>
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/jquery.cycle2.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?"></script>   
+        <script>
+            /**
+                jQuery events
+              */
+              $(document).ready(function() {
+                
+                  var venuesHeight = $(".venues-listing").height();
+                  $(".map-listing").height(venuesHeight);
+                  
+                // initiate Google maps  
+                initialize();
+                // make a .hover event
+                $('.venues-listing .venue').hover(
+                  // mouse in
+                  function () {
+                    var index = $('.venues-listing .venue').index(this);
+                    markers[index].setIcon(highlightedIcon());
+                  },
+                  // mouse out
+                  function () {
+                    var index = $('.venues-listing .venue').index(this);
+                    markers[index].setIcon(normalIcon());
+                  }
+                );
+                  
+                  $(".explore-menu>a").click(function(){
+                      $(".explore-menu>ul").fadeToggle(200);
+                  });
+                  $(".filter>a").click(function(){
+                      $(".filter>ul").fadeToggle(200);
+                  });
+                
+              });
+              /**
+                Google Maps stuff
+              */
+                var map;
+                var markerData = [   // the order of these markers must be the same as the <div class="venue"></div> elements
+                  {lat: 50.84498605, lng: 4.349977747, title: 'Asiate'},
+                  {lat: 50.84848913, lng: 4.354053363, title: 'Blue hill'},
+                  {lat: 50.84673465, lng: 4.352466166, title: 'Jean-Georges'},
+                  {lat: 50.84598605, lng: 4.349977747, title: 'Petrossian'},
+                  {lat: 50.84348913, lng: 4.354053363, title: 'ABC Kitche'},
+                  {lat: 50.84573465, lng: 4.352466166, title: 'OC'}
+                ];
+                var markers = [];
+                var mapOptions = {
+                  zoom: 15,
+                  center: new google.maps.LatLng(50.84673465,4.352466166),  // Brussels, Belgium
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+                function initialize() {
+                  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                  for (var i=0; i<markerData.length; i++) {
+                    markers.push(
+                      new google.maps.Marker({
+                        position: new google.maps.LatLng(markerData[i].lat, markerData[i].lng),
+                        title: markerData[i].title,
+                        map: map,
+                        icon: normalIcon()
+                      })
+                    );
+                  }
+                }
+                // functions that return icons.
+                function normalIcon() {
+                  return {
+                    url: 'imgs/marker.png'
+                  };
+                }
+                function highlightedIcon() {
+                  return {
+                    url: 'imgs/markerHighlighted.png'
+                  };
+                }
+        </script>
+        
 	</body>
 </html>

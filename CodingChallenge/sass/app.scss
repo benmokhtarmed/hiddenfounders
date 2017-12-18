@@ -19,8 +19,8 @@ header{
     .explore-menu{float: left;
         a, i{color: #fff;}
         i{display: inline-block; margin-left: 6px;}
-        ul{display: none;}
-        li{list-style: none;
+        ul{display: none; position: absolute;z-index: 2; background: $background-main-color; padding: 0; margin: 0;}
+        li{list-style: none; text-align: center; padding: 10px 30px; 
             a{color: #fff;}
         }   
     }
@@ -45,14 +45,22 @@ main{
         }
     }
     nav{
-        background: $background-main-color; clear: both; overflow: hidden;
-        >ul{float: left; position: relative;}
-        >ul>li>ul{display: none; position: absolute;}
+        background: $background-main-color; clear: both; overflow: hidden; padding: 12px 0;
+        
         li{list-style: none;}
         a{color: #fff; text-transform: uppercase;}
-        ul.filter{
-            
+        
+        
+        .filter{ float: left; margin: 20px 0 0 20px;
+            a, i{color: #fff;}
+            i{display: inline-block; margin-left: 6px;}
+            ul{display: none; position: absolute;z-index: 112; background: $background-main-color; padding: 0; margin: 0;}
+            li{list-style: none; padding: 10px 30px; 
+                a{color: #fff;}
+            }   
         }
+        
+        
         ul.sort{
             margin: 20px 0 0 170px;
             li{float: left; margin: 0 20px;
@@ -63,8 +71,8 @@ main{
         
     }
     #primary{
-        clear: both;
-        .venues-listing{float: left; 
+        clear: both; overflow: hidden;
+        .venues-listing{float: left; overflow: hidden;
             .venue{float: left; position: relative;
                 img{width: 100%}
                 .cycle-slideshow>span{position:absolute; top:45%; color: #fff; z-index: 1200; display:block; cursor: pointer;}
@@ -160,7 +168,7 @@ footer{
     .venues-listing{width: 65%; margin: 10px;
         .venue{width: 31%;margin: 3px}
     } 
-    .map-listing{display: block;}
+    .map-listing{display: block; min-height: 540px; height: 100%; overflow: hidden;}
 }
 
 @media only screen and (min-width: 1316px) {
@@ -190,7 +198,7 @@ footer{
     .venues-listing{width: 68%; margin: 10px 0 0 20px;
         .venue{width: 30%; max-width: 310px; margin: 3px;}
     } 
-    .map-listing{display: block;}
+    .map-listing{display: block; min-height: 740px; height: 100%; overflow: hidden;}
 }
 
 

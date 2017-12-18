@@ -24,9 +24,16 @@ header {
       display: inline-block;
       margin-left: 6px; }
     header .explore-menu ul {
-      display: none; }
+      display: none;
+      position: absolute;
+      z-index: 2;
+      background: #273042;
+      padding: 0;
+      margin: 0; }
     header .explore-menu li {
-      list-style: none; }
+      list-style: none;
+      text-align: center;
+      padding: 10px 30px; }
       header .explore-menu li a {
         color: #fff; }
   header #user-area {
@@ -70,18 +77,33 @@ main {
   main nav {
     background: #273042;
     clear: both;
-    overflow: hidden; }
-    main nav > ul {
-      float: left;
-      position: relative; }
-    main nav > ul > li > ul {
-      display: none;
-      position: absolute; }
+    overflow: hidden;
+    padding: 12px 0; }
     main nav li {
       list-style: none; }
     main nav a {
       color: #fff;
       text-transform: uppercase; }
+    main nav .filter {
+      float: left;
+      margin: 20px 0 0 20px; }
+      main nav .filter a, main nav .filter i {
+        color: #fff; }
+      main nav .filter i {
+        display: inline-block;
+        margin-left: 6px; }
+      main nav .filter ul {
+        display: none;
+        position: absolute;
+        z-index: 112;
+        background: #273042;
+        padding: 0;
+        margin: 0; }
+      main nav .filter li {
+        list-style: none;
+        padding: 10px 30px; }
+        main nav .filter li a {
+          color: #fff; }
     main nav ul.sort {
       margin: 20px 0 0 170px; }
       main nav ul.sort li {
@@ -93,9 +115,11 @@ main {
           color: #E23943;
           border-bottom: 2px solid #E23943; }
   main #primary {
-    clear: both; }
+    clear: both;
+    overflow: hidden; }
     main #primary .venues-listing {
-      float: left; }
+      float: left;
+      overflow: hidden; }
       main #primary .venues-listing .venue {
         float: left;
         position: relative; }
@@ -266,7 +290,10 @@ footer {
       margin: 3px; }
 
   .map-listing {
-    display: block; } }
+    display: block;
+    min-height: 540px;
+    height: 100%;
+    overflow: hidden; } }
 @media only screen and (min-width: 1316px) {
   #main-logo {
     margin: 10px;
@@ -324,6 +351,9 @@ footer {
       margin: 3px; }
 
   .map-listing {
-    display: block; } }
+    display: block;
+    min-height: 740px;
+    height: 100%;
+    overflow: hidden; } }
 
 /*# sourceMappingURL=app.css.map */
